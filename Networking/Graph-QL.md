@@ -38,7 +38,8 @@ query ExampleQuery {
 ```
 
 ## Why GraphQL? What are its benefits?
-![features of graph-ql](https://github.com/user-attachments/assets/fe57bd8f-4698-4310-9970-70108c6c2bb3)
+![GraphQL_features](https://github.com/user-attachments/assets/c22d753c-0f4b-4f4d-bbb8-1e4ac1f33df7)
+
 
 
 **1. No Over-Fetching or Under-Fetching**
