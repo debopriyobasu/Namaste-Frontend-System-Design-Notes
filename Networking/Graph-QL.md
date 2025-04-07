@@ -101,9 +101,9 @@ This is called **declarative data fetching** — you say what you want, not how 
 **4. Strongly Typed**
 
 GraphQL APIs are backed by a strong type system. That means:
-	•	You always know what fields exist
-	•	You know their types (e.g., String, Int, Boolean)
-	•	Errors can be caught early—great for IDEs and tooling
+- You always know what fields exist
+- You know their types (e.g., String, Int, Boolean)
+- Errors can be caught early—great for IDEs and tooling
 
 
 **5. Real-Time updates with Subscriptions**
