@@ -157,16 +157,114 @@ No more managing a dozen REST routes—just one door, and you choose what comes 
 
 ## Building blocks of GraphQL
 
-### Schema / Types
+| **Building Block** | **Role** |
+|-------------------|------------|
+| **Schema** | Defines what data is available and how it's structured |
+| **Types** | Shape and structure of your data |
+| **Queries** | Read/get data |
+| **Mutations** | Create/update/delete data |
+| **Resolvers** | Connect schema to actual data (the logic) |
+| **Root Types** | Entry points: Query, Mutation, Subscription |
+| **Subscriptions** | Real-time data streams |
+| **Introspection** | Lets you explore the schema itself |
 
-### Query / Mutations
+Imagine GraphQL as a conversation between your app and your data. The app is asking very specific questions, and GraphQL has a structured language to make sure those questions are clear, valid, and well-answered.
 
-### Resolver
+Here’s the toolkit—aka the core building blocks that make GraphQL work:
 
-## Building a small GraphQL App
+**1. Schema – The Blueprint**
 
-## Calling GraphQL from client
+Think of the schema as your API’s contract. It defines what data exists, how it’s structured, and what’s allowed to be asked.
+
+> The schema is written using GraphQL’s **Schema Definition Language (SDL)**. It defines types, relationships, queries, mutations, and more.
+
+```graphql
+ type Country {
+  name: String
+  code: String
+}
+```
+This tells us that a Country has a name and code, both of which are strings.
+
+**2. Types – The Lego Bricks**
+
+> Everything in GraphQL is a type. Types define the shape of your data.
+
+There are a few key types:
+- **Scalar types:** String, Int, Boolean, Float, ID – the basic building blocks.
+- **Object types:** Your custom types like User, Post, Country, etc.
+- **Enum types:** Limited set of string values, e.g., Status = ACTIVE | INACTIVE
+- **List types:** Like an array, e.g., [Country]
+- **Non-null types:** Add ! to enforce that a field is required, e.g., String!
+
+**3. Queries – Asking for Data**
+
+> A query is how you ask for data. You describe the shape of what you want, and the server returns it—exactly.
+
+```graphql
+query {
+  countries {
+    name
+    code
+  }
+}
+```
+This says: “Give me all countries, but I only care about their name and code.”
+
+**4. Mutations – Changing Data**
+> If queries are for getting, mutations are for changing.
+
+Use them to create, update, or delete data.
+
+```graphql
+mutation {
+  addCountry(name: "Atlantis", code: "ATL") {
+    name
+    code
+  }
+}
+```
+
+**5. Resolvers – The Logic Behind the Curtain**
+> Resolvers are the functions that connect the schema to your actual data.
+
+When you query for countries, a resolver defines how to fetch that data—whether it’s from a database, an API, or even a hardcoded list.
+Resolvers are invisible to the client—but they do the heavy lifting behind the scenes.
+
+**6. Root Types – Where Everything Starts**
+
+These are the entry points into your GraphQL schema:
+
+- **Query** – for fetching data
+- **Mutation** – for writing data
+- **Subscription** – for real-time updates
+
+**7. Subscriptions – For Real-Time Data**
+
+> Want live updates? Use subscriptions.
+
+This allows the client to “subscribe” to changes and receive real-time data, often over **WebSockets**.
+
+```graphql
+subscription {
+  countryAdded {
+    name
+    code
+  }
+}
+```
+
+**8. Introspection – The API That Describes Itself**
+
+GraphQL is self-aware. You can query the schema itself using special fields like ```__schema``` and ```__type```.
+
+This powers tooling and makes GraphQL **self-documenting**.
+
+<!--  ## Building a small GraphQL App
+
+ ## Calling GraphQL from client
 
 ## Tooling
 
 ## Advanced
+--!>
