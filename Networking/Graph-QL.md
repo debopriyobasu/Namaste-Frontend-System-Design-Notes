@@ -38,7 +38,9 @@ query ExampleQuery {
 ```
 
 ## Why GraphQL? What are its benefits?
-![GraphQL_features](https://github.com/user-attachments/assets/c22d753c-0f4b-4f4d-bbb8-1e4ac1f33df7)
+
+<img width="590" alt="graphql features" src="https://github.com/user-attachments/assets/587e2460-6ed3-473c-a27f-e27cc4025148" />
+
 
 
 
